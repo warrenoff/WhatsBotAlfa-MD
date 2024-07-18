@@ -48,7 +48,7 @@ command(
 command(
   {
     on: "text",
-    fromMe: true,
+    fromMe: false,
     desc: "Save or Give Status Updates",
     dontAddCommandList: true,
     type: "Tool",
