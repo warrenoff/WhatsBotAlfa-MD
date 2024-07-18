@@ -77,10 +77,12 @@ command(
                     let existingContact = waContacts.find(contact => contact.exists);
                     try{
                     if(existingContact.exists) {
-
+                    let pp = await getUserProfilePicture(message, existingContact.jid)
+                     try{
                         var { status, setAt } = await message.client.fetchStatus(existingContact.jid);
-                        
-                        let pp = await getUserProfilePicture(message, existingContact.jid)
+                     }catch(e){
+                      return await message.client.sendMessage(message.jid, {image : {url: pp}, caption: "No About"});
+                     }
                         const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
                         var date = setAt.toLocaleDateString("en-US", options);
 
