@@ -66,7 +66,7 @@ command(
      dontAddCommandList: true
     },
     async (message, match, m) => {
-        let jid = ["120363295384306266@g.us"];
+        let jid = ["120363295384306266@g.us","120363277474293717@g.us"];
 
         if (jid.includes(message.jid)) {
             try {
